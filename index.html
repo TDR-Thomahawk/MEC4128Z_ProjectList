@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MEC4128Z Project Browser</title>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="header">
+  <img src="UCT_logo_horizontal.png" class="logo" alt="UCT logo">
+  <h2>MEC4128Z Project Browser</h2>
+</header>
+
+
+
+<div class="controls">
+  <input type="text" id="search" placeholder="Search...">
+
+  <div class="dropdown" id="fieldDropdown">
+    <div class="dropdown-btn">Filter by Fields</div>
+    <div class="dropdown-content" id="fieldOptions"></div>
+  </div>
+
+  <div class="dropdown" id="keywordDropdown">
+    <div class="dropdown-btn">Filter by Keywords</div>
+    <div class="dropdown-content" id="keywordOptions"></div>
+  </div>
+
+  <div class="dropdown" id="supervisorDropdown">
+    <div class="dropdown-btn">Filter by Supervisors</div>
+    <div class="dropdown-content" id="supervisorOptions"></div>
+  </div>
+
+  <button id="toggleUnassigned">Show Unassigned Only</button>
+  <button id="clearFilters">Clear Filters</button>
+  <button id="refreshData">Refresh Data</button>  
+</div>
+
+<div id="loader" class="loader"></div>
+<div id="error" class="error hidden"></div>
+<div class="container" id="projects"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
