@@ -36,9 +36,87 @@
   </div>
 
   <button id="toggleUnassigned">Show Unassigned Only</button>
+  <button id="expandedFilterBtn">Show Selected Projects</button>
+  <button id="exportCsv">Export Project Preference CSV</button>
+  <button id="exportMarkdown">Export Selected Markdown</button>  
   <button id="clearFilters">Clear Filters</button>
   <button id="refreshData">Refresh Data</button>  
 </div>
+
+<details class="instructions">
+<summary>How to Select and Export Project Preferences</summary>
+<div class="instructions">
+  <h3>How to Select and Export Your Project Preferences</h3>
+
+  <ol>
+    <li>
+      <strong>Browse the project list</strong><br />
+      Review the available projects shown on the following page.
+    </li>
+
+    <li>
+      <strong>Select a project</strong><br />
+      Click on any project card to add it to your shortlist.
+    </li>
+
+    <li>
+      <strong>View your selected projects</strong><br />
+      Your chosen projects can be seen by clicking <strong>Show Selected Projects</strong> .
+      You can remove a project at any time before exporting by clicking it again.
+    </li>
+
+    <li>
+      <strong>Assign a preference rank</strong><br />
+      For each selected project, choose a <strong>unique preference ranking</strong>
+      from <strong>1–12</strong>, where:
+      <ul>
+        <li><strong>1</strong> = highest preference</li>
+        <li><strong>12</strong> = lowest preference</li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Export to CSV</strong><br />
+      Once all preferences are complete, click
+      <strong>Export Project Preference CSV</strong> to download your submission file.
+    </li>
+  </ol>
+
+  <h3>Preference Rules</h3>
+  <p>Before exporting, the system checks that:</p>
+
+  <ul>
+    <li>You have selected <strong>exactly 12 projects</strong> (not more or less)</li>
+    <li>Every selected project has a preference rank assigned</li>
+    <li>Preference ranks are <strong>unique</strong> (no duplicate rankings)</li>
+    <li>
+      A project has not already been assigned to another student,
+      unless that project has capacity for more than one student
+    </li>
+  </ul>
+
+  <p>
+    If any of these rules are not met, export will be blocked until the issue is corrected.
+  </p>
+
+  <h3>Filters</h3>
+  <p>Use the filter controls above the project list to narrow what is shown:</p>
+
+  <ul>
+    <li><strong>Show Selected Projects</strong> – displays only projects you have selected</li>
+    <li><strong>Show Unassigned Only</strong> – displays only projects that have not been pre-allocated.</li>
+    <li>
+      <strong>Search / Category filters</strong> – filter projects by keyword,
+      supervisor, category, or Fields.
+    </li>
+  </ul>
+
+  <p>
+    Filters only affect what is visible on screen —
+    they do <strong>not</strong> remove projects from your selected list.
+  </p>
+</div>
+</details>
 
 <div id="loader" class="loader"></div>
 <div id="error" class="error hidden"></div>
