@@ -59,6 +59,7 @@ header {
   max-height: 500px;
   opacity: 1;
   margin-top: 0.75rem;
+  transition-delay:  0.6s; 
 }
 
 .card.expanded {

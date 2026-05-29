@@ -171,10 +171,18 @@ function render(projects) {
             : ""
         }
 
-        ${p.project.assigned_student 
-            ? `<div class="meta2"><b>Assigned to:</b> ${p.project.assigned_student}</div>`
+        ${(p.project.assigned_student?.length)
+            ? `<div class="meta2"><b>Assigned to:</b> ${p.project.assigned_student.join(", ")}</div>`
             : ""
         }
+
+        ${(p.project.assigned_student?.length &&
+            p.project.capacity > (p.project.assigned_student.length))
+            ? `<div class="meta2"><b>Additional available slots:</b> ${
+                p.project.capacity - (p.project.assigned_student.length)
+                }</div>`
+            : ""
+        }        
 
         ${p.project.brief 
             ? `<div class="brief">${p.project.brief}</div>`
@@ -244,7 +252,6 @@ function clearFilters() {
   selectedFields.clear();
   selectedKeywords.clear();
   selectedSupervisors.clear();
-  expandedProjects.clear();
   document.querySelectorAll("input[type=checkbox]").forEach(cb => cb.checked = false);
   applyFilters();
 }
@@ -343,7 +350,6 @@ function exportSelectedToCSV() {
 
 function exportSelectedToMarkdown() {
   const selectedProjects = [...expandedProjects]
-    .slice(0, 12)
     .map(id => allProjects.find(p => String(p.id) === String(id)))
     .filter(Boolean);
 
