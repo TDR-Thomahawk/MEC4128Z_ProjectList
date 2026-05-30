@@ -306,11 +306,12 @@ function exportSelectedToCSV() {
           p => String(p.id) === String(sel.id)
       );
 
+      console.log(project);
       if (!project) return true;
 
       const assigned =
-          project.project.assigned_student &&
-          project.project.assigned_student.trim() !== "";
+          Array.isArray(project.project.assigned_student) &&
+          project.project.assigned_student.length > 0;
 
       const capacity =
           Number(project.project.capacity || 1);
